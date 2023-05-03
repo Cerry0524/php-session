@@ -1,3 +1,6 @@
+<?php
+include_once('comm.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +60,7 @@ if(isset($_SESSION['login'])){
 }else{
 
 ?>
+    <!-- 以下是製作登入介面時，先開始的第一步 -->
     <form action="check.php" method="post">
         <div>
             <img src="./logo.png" alt="logo">
@@ -73,9 +77,10 @@ if(isset($_SESSION['login'])){
             <input type="submit" value="登    入">
         </div>
         <div style="color:red">
+            <!--下面內容是製作出check.php才回頭製作的  -->
             <?php
             if(isset($_SESSION['error'])){
-                echo "帳號或密碼錯誤";
+                echo $_SESSION['error'];
             }
             ?>
         </div>
